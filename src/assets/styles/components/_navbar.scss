@@ -1,0 +1,75 @@
+.navbar{
+    background-color: #272829;
+
+    .container{
+        display: flex;
+        margin: 0 1rem;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 3rem;
+        padding: .5rem 0;
+        gap:4rem;
+    }
+
+    &-brand{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        gap:1rem;
+
+        img{
+            width: 2rem;
+            color: aliceblue;
+        }
+
+        &-text{
+            span{
+                color: white;
+                text-transform: uppercase;
+            }
+            span:first-child{
+                color: #ff0000;
+            }
+        }
+        
+    }
+
+    .menu-main{
+        flex-grow: 1;
+        color: white;
+        ul{
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            
+
+            a{
+                font-family: 'Roboto', sans-serif;
+                font-size: .95rem;
+                text-transform: uppercase;
+                text-decoration: none;
+                color:white;
+
+                &:hover{
+                    color:#ff0000;
+                }
+            }
+        }
+    }
+
+    .menu-secondary{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:1rem;
+    }
+
+    &-account{
+        img{
+            width: 2rem;
+        }
+    }
+}
