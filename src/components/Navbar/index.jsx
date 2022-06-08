@@ -1,6 +1,7 @@
-import Logo from '../../assets/images/Logo-movie.png'
+import Logo from '../../assets/images/Logo-manga.png'
 import Avatar from '../Avatar'
 import User from '../../assets/images/User-icon.png'
+import { MenuData } from './components/MenuData'
 
 const NavBar = () => {
 
@@ -11,18 +12,16 @@ const NavBar = () => {
         <div className="navbar-brand">
           <img src={Logo} alt="Logo" />
           <div className="navbar-brand-text">
-            <span>Cine</span>
-            <span>World</span>
+            <span>Manga</span>
+            <span>Store</span>
           </div>
         </div>
 
         <nav className="menu-main">
           <ul>
-            <li><a href="./#">Inicio</a></li>
-            <li><a href="./#">Peliculas</a></li>
-            <li><a href="./#">Cine</a></li>
-            <li><a href="./#">Dulceria</a></li>
-            <li><a href="./#">Contacto</a></li>
+            {MenuData.map((item,index) =>
+              (<li key={index}><a href="./#">{item.title}</a></li>)
+            )}
           </ul>
         </nav>
         <div className='menu-secondary'>
