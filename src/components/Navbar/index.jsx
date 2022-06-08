@@ -2,6 +2,7 @@ import Logo from '../../assets/images/Logo-manga.png'
 import Avatar from '../Avatar'
 import User from '../../assets/images/User-icon.png'
 import { MenuData } from './components/MenuData'
+import CartWidget from '../CartWidget'
 
 const NavBar = () => {
 
@@ -31,6 +32,7 @@ const NavBar = () => {
             <div className="navbar-account">
               <Avatar url={User}/>
             </div>
+            <CartWidget/>
         </div>
       </div>
     </header>
