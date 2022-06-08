@@ -1,11 +1,10 @@
+import ItemListContainer from "../../components/ItemListContainer"
 
 
 const Home = () => {
   return (
     <>
-        <div>
-            Inicio 
-        </div>
+        <ItemListContainer greeting={'Bienvenidos!'}/>
     </>
   )
 }
