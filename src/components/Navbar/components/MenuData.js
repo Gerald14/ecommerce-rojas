@@ -4,12 +4,12 @@ export const MenuData = [
       path: '/'
     },
     {
-      title: 'Categorias',
-      path: '/categories'
+      title: 'Mangas',
+      path: '/mangas'
     },
     {
-      title: 'Editoriales',
-      path: '/editorials'
+      title: 'Promociones',
+      path: '/promotions'
     },
     {
       title: 'Contacto',

@@ -3,6 +3,7 @@ import Avatar from '../Avatar'
 import User from '../../assets/images/User-icon.png'
 import { MenuData } from './components/MenuData'
 import CartWidget from '../CartWidget'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
 
@@ -21,7 +22,11 @@ const NavBar = () => {
         <nav className="menu-main">
           <ul>
             {MenuData.map((item,index) =>
-              (<li key={index}><a href="./#">{item.title}</a></li>)
+              (<li key={index}>
+                <Link to={item.path}>
+                    {item.title}
+                  </Link>
+                </li>)
             )}
           </ul>
         </nav>
