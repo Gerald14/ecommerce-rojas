@@ -2,6 +2,8 @@ import Card from "@mui/material/Card"
 import CardMedia from "@mui/material/CardMedia"
 import CardContent from "@mui/material/CardContent"
 import Typography from "@mui/material/Typography"
+import { CardActions } from "@mui/material";
+import ItemCount from "../ItemCount";
 const mangasImg = require.context('../../assets/images/mangas', true);
 
 
@@ -15,13 +17,16 @@ const ProductCard = ({product}) => {
         alt={product.name}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" sx={{ fontSize: 16 }} component="div">
           {product.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {product.price}
         </Typography>
       </CardContent>
+      <CardActions>
+        <ItemCount stock={product.stock}/>
+      </CardActions>
     </Card>
   )
 }
