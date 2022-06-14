@@ -7,11 +7,13 @@ import { Box } from '@mui/system';
 
 const ItemCount = ({stock,initial=1}) => {
 
-  const [count, setCount] = useState(initial)
+  const [count, setCount] = useState(initial);
+
   const handleAdd = () => {
     if(count < stock)
     setCount(count + 1)
   }
+
   const handleRemove = () => {
     if(count > initial)
     setCount(count - 1)
@@ -20,8 +22,8 @@ const ItemCount = ({stock,initial=1}) => {
   return (
       <Stack spacing={2} width='100%'>
         <Box  component='div' sx={{width:'100%',display:'flex' ,justifyContent:'center'}}>
-          <IconButton aria-label="Example">
-            <RemoveIcon onClick={handleRemove} />
+          <IconButton aria-label="Example" onClick={handleRemove} >
+            <RemoveIcon/>
           </IconButton>
           <FormControl sx={{ width: '5rem' }}>
             <OutlinedInput 
@@ -29,11 +31,11 @@ const ItemCount = ({stock,initial=1}) => {
             value={count}
           />
           </FormControl>
-          <IconButton aria-label="Example">
-            <AddIcon onClick={handleAdd} />
+          <IconButton aria-label="Example" onClick={handleAdd}>
+            <AddIcon/>
           </IconButton>
         </Box>
-        <Button variant="text" >
+        <Button variant="contained" >
           Agregar al carrito
         </Button>
       </Stack>

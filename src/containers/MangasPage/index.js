@@ -1,9 +1,20 @@
 import { Grid, Typography } from '@mui/material'
-import React from 'react'
+import { useEffect, useState } from 'react'
 import ProductList from '../../components/ProductList'
 import { MangasData } from './components/MangasData'
 
 const MangasPage = () => {
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    setProducts(MangasData)
+    return () => {
+      setProducts();
+    }
+  }, [])
+  
+
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} mt={3}>
@@ -13,7 +24,7 @@ const MangasPage = () => {
         Filtros
       </Grid>
       <Grid item xs={12} md={9}>
-        <ProductList products={MangasData}/>
+        <ProductList products={products}/>
       </Grid>
     </Grid>
   )
