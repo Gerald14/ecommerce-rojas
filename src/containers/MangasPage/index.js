@@ -6,13 +6,31 @@ import { MangasData } from './components/MangasData'
 const MangasPage = () => {
 
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setProducts(MangasData)
+
+    //Simula peticion
+    const MocAsync = new Promise((resolve)=>{
+      setTimeout(() => {
+        resolve(MangasData)
+      }, 2000);
+    });
+
+    //Setea los datos obtenidos de la peticion
+    MocAsync
+    .then((products) => {
+      setProducts(products);
+      setLoading(false);
+    })
+    .catch((error) => console.error(error))
+    
     return () => {
       setProducts();
     }
   }, [])
+
+  if(loading) return <div>Cargando</div>
   
 
   return (
