@@ -5,7 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { Box } from '@mui/system';
 
-const ItemCount = ({stock,initial=1}) => {
+const ItemCount = ({stock,initial=1,onAdd}) => {
 
   const [count, setCount] = useState(initial);
 
@@ -17,6 +17,10 @@ const ItemCount = ({stock,initial=1}) => {
   const handleRemove = () => {
     if(count > initial)
     setCount(count - 1)
+  }
+
+  const handleCheck = () => {
+    onAdd(count)
   }
 
   return (
@@ -35,7 +39,7 @@ const ItemCount = ({stock,initial=1}) => {
             <AddIcon/>
           </IconButton>
         </Box>
-        <Button variant="contained" >
+        <Button variant="contained" onClick={handleCheck} >
           Agregar al carrito
         </Button>
       </Stack>

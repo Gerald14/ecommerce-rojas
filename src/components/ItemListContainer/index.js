@@ -1,25 +1,13 @@
 import React from 'react'
-import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
+import ItemList from '../ItemList'
 
 
-const ItemListContainer  = ({greeting}) => {
+const ItemListContainer  = ({products}) => {
   return (
       
-    <Grid 
-        container  
-        spacing={1}
-        sx={{p:2}}
-        direction="row"
-        justify="center"
-        alignItems="center"
-        alignContent="center"
-        wrap="nowrap"
-    >
-        <Grid item xs={8}>
-            <Typography variant="h2" color="initial">{greeting}</Typography>
-        </Grid>
-    </Grid>
+    <>
+        <ItemList products={products}/>
+    </>
   )
 }
 
