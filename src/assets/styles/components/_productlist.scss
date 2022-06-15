@@ -1,6 +1,44 @@
 .product-list{
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(13rem,1fr));
-    grid-gap: 3rem;
-    justify-content: space-evenly;
+    grid-gap: 2rem;
+    justify-content: space-between;
+}
+
+.product{
+    position: relative;
+    // .MuiCardContent-root{
+    //     background-color: #272829;
+    //     .MuiTypography-root{
+    //         color: white;
+    //     }
+        
+    // }
+
+    .MuiCardActions-root{
+        background: rgba(2,0,36,0.6);
+        background:linear-gradient(0deg, #020024bf 0%, #36347599 29%, #3268a138 67%);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        display: none;
+        .MuiBox-root{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+       
+    }
+    &:hover{
+        transform: scale(1.06);
+    }
+
+    &:hover .MuiCardActions-root {
+        display: block;
+    }
 }
