@@ -9,7 +9,7 @@ import { Box } from "@mui/system";
 const mangasImg = require.context('../../assets/images/mangas', true);
 
 
-const ProductCard = ({product}) => {
+const Item = ({product}) => {
   return (
     <Card sx={{ maxWidth: 335, '.MuiCardMedia-root':{height:'21rem',objectFit:'cover'}}} className="product">
       <CardMedia
@@ -40,4 +40,4 @@ const ProductCard = ({product}) => {
   )
 }
 
-export default ProductCard
+export default Item

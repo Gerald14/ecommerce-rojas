@@ -1,15 +1,15 @@
 import { Box } from '@mui/material'
-import ProductCard from '../ProductCard';
+import Item from '../Item';
 
-const ProductList = ({products}) => {
+const ItemList = ({products}) => {
 
   return (
     <Box component='div' className='product-list' m={5}>
         {products.map((product,index) =>
-            <ProductCard key={index} product={product}/>
+            <Item key={index} product={product}/>
         )}
     </Box>
   )
 }
 
-export default ProductList
+export default ItemList

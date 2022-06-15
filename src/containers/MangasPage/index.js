@@ -1,6 +1,6 @@
 import { Grid, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
-import ProductList from '../../components/ProductList'
+import ItemList from '../../components/ItemList'
 import { MangasData } from './components/MangasData'
 
 const MangasPage = () => {
@@ -42,7 +42,7 @@ const MangasPage = () => {
         Filtros
       </Grid>
       <Grid item xs={12} md={9}>
-        <ProductList products={products}/>
+        <ItemList products={products}/>
       </Grid>
     </Grid>
   )
