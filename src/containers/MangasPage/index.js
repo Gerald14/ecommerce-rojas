@@ -1,37 +1,7 @@
 import { Grid, Typography } from '@mui/material'
-import { useEffect, useState } from 'react'
 import ItemListContainer from '../../components/ItemListContainer'
-import { MangasData } from './components/MangasData'
 
 const MangasPage = () => {
-
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-
-    //Simula peticion
-    const MocAsync = new Promise((resolve)=>{
-      setTimeout(() => {
-        resolve(MangasData)
-      }, 2000);
-    });
-
-    //Setea los datos obtenidos de la peticion
-    MocAsync
-    .then((products) => {
-      setProducts(products);
-      setLoading(false);
-    })
-    .catch((error) => console.error(error))
-    
-    return () => {
-      setProducts();
-    }
-  }, [])
-
-  if(loading) return <div>Cargando</div>
-  
 
   return (
     <Grid container spacing={2}>
@@ -42,7 +12,7 @@ const MangasPage = () => {
         Filtros
       </Grid>
       <Grid item xs={12} md={9}>
-        <ItemListContainer products={products}/>
+        <ItemListContainer/>
       </Grid>
     </Grid>
   )

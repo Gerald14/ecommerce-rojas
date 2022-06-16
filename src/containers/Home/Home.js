@@ -1,6 +1,4 @@
 import { Typography } from "@mui/material"
-import ItemListContainer from "../../components/ItemListContainer"
-
 
 const Home = () => {
   return (
