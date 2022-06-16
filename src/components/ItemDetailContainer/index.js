@@ -16,7 +16,6 @@ const ItemDetailContainer = () => {
     const MocAsync = new Promise((resolve)=>{
       setTimeout(() => {
         const mangaObj = MangasData.filter(manga => manga.id == mangaId)[0];
-        console.log(mangaObj)
         resolve(mangaObj)
       }, 2000);
     });
