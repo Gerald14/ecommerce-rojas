@@ -3,9 +3,13 @@ import Avatar from '../Avatar'
 import User from '../../assets/images/User-icon.png'
 import { MenuData } from './components/MenuData'
 import CartWidget from '../CartWidget'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
+
+  let activeStyle = {
+    color: "red",
+  };
 
   return (
     <header className="navbar">
@@ -23,9 +27,14 @@ const NavBar = () => {
           <ul>
             {MenuData.map((item,index) =>
               (<li key={index}>
-                <Link to={item.path}>
+                <NavLink 
+                  to={item.path}
+                  style={({ isActive }) =>
+                    isActive ? activeStyle : undefined
+                  }
+                >
                     {item.title}
-                  </Link>
+                  </NavLink>
                 </li>)
             )}
           </ul>
