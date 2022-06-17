@@ -7,7 +7,7 @@ const mangasImg = require.context('../../assets/images/mangas', true);
 
 const ItemDetail = ({product}) => {
   return (
-    <>
+    <Grid container sx={{width:'100%'}} mt={2}>
       <Grid item xs={12} md={12} mb={2}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link
@@ -42,19 +42,22 @@ const ItemDetail = ({product}) => {
       </Grid>
       <Grid item xs={12} sm={7}>
         <Box component='div' m={3}>
-          <Typography variant="h5" color="initial">
+          <Typography variant="subtitle1" gutterBottom component="div">
+            {product.editorial}
+          </Typography>
+          <Typography variant="h4" color="initial" sx={{textTransform:'uppercase', fontWeight:'600'}}>
             {product.name}
           </Typography>
-          <Typography variant="span" color="initial">
+          <Typography variant="h5" color="initial" gutterBottom>
             {`S/.${product.price}`}
           </Typography>
-          <Typography variant="body1" color="initial">
+          <Typography variant="body1" color="initial" mb={4}>
             {product?.description}
           </Typography>
           <ItemCount stock={product.stock}/>
         </Box>
       </Grid>
-    </>
+    </Grid>
   )
 }
 

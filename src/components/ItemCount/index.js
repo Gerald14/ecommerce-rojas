@@ -24,8 +24,8 @@ const ItemCount = ({stock,initial=1,onAdd}) => {
   }
 
   return (
-      <Stack spacing={2} width='100%'>
-        <Box  component='div' sx={{width:'100%',display:'flex' ,justifyContent:'center'}}>
+      <Stack spacing={4}>
+        <Box  component='div' sx={{width:'100%',display:'flex' ,gap:'1rem'}}>
           <IconButton aria-label="Example" onClick={handleRemove} >
             <RemoveIcon/>
           </IconButton>
@@ -33,6 +33,7 @@ const ItemCount = ({stock,initial=1,onAdd}) => {
             <OutlinedInput 
             size='small'
             value={count}
+            sx={{'.MuiInputBase-input':{textAlign:'center'}}}
           />
           </FormControl>
           <IconButton aria-label="Example" onClick={handleAdd}>

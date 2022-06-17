@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail";
 import { useParams } from 'react-router-dom';
 import { MangasData } from "../../Data/MangasData";
-import { Grid } from "@mui/material";
+import { Container } from "@mui/material";
 
 
 const ItemDetailContainer = () => {
@@ -36,9 +36,9 @@ const ItemDetailContainer = () => {
   if(loading) return <div>Cargando</div>
 
   return (
-    <Grid container sx={{width:'100%',p:{xs:2,sm:2}}}>
+    <Container >
       <ItemDetail product={product}/>
-    </Grid>
+    </Container>
   )
 }
 
