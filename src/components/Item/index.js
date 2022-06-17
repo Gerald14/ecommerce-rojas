@@ -15,7 +15,7 @@ const Item = ({product}) => {
   const Navigate = useNavigate();
 
   const handleViewDetail = () => {
-    Navigate(`${product.id}`)
+    Navigate(`/item/${product.id}`)
   }
 
   const handleAddToCart = () => {

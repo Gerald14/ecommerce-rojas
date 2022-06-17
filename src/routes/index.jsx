@@ -11,7 +11,7 @@ const index = () => {
       <Route element={<Layout/>}>
         <Route path="/" element={<Home/>}/>
         <Route path="/mangas" element={<MangasPage/>}/>
-        <Route path="mangas/:mangaId" element={<ItemDetailContainer/>} />
+        <Route path="/item/:itemId" element={<ItemDetailContainer/>} />
       </Route>
     </Routes>
   )

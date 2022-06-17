@@ -10,13 +10,13 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  let { mangaId } = useParams();
+  let { itemId } = useParams();
 
   useEffect(() => {
     
     const MocAsync = new Promise((resolve)=>{
       setTimeout(() => {
-        const mangaObj = MangasData.filter(manga => manga.id == mangaId)[0];
+        const mangaObj = MangasData.filter(manga => manga.id == itemId)[0];
         resolve(mangaObj)
       }, 2000);
     });

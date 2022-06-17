@@ -1,18 +1,12 @@
 export const MenuData = [
     {
-      title: 'Inicio',
-      path: '/'
-    },
-    {
+      id:1,
       title: 'Mangas',
       path: '/mangas'
     },
     {
+      id:2,
       title: 'Promociones',
       path: '/promotions'
-    },
-    {
-      title: 'Contacto',
-      path: '/contact'
     }
   ];

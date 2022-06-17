@@ -4,8 +4,7 @@ import { styled } from '@mui/material/styles'
 const Main = styled('main')(({theme}) => ({
     flexGrow:1,
     width:'100%',
-    marginLeft:'0px',
-    paddingTop: theme.mixins.toolbar.minHeight
+    marginLeft:'0px'
 }))
 
 export default Main

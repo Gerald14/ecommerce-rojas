@@ -18,9 +18,9 @@ const NavBar = () => {
   }
 
   return (
-    <AppBar className="navbar">
+    <AppBar className="navbar" position="fixed">
       <Container maxWidth="xl">
-        <Toolbar disableGutters >
+        <Toolbar >
 
           <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
