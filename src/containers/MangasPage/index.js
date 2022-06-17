@@ -4,7 +4,7 @@ import ItemListContainer from '../../components/ItemListContainer'
 const MangasPage = () => {
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} sx={{width:'100%',p:{xs:2,sm:2}}}>
       <Grid item xs={12} mt={3}>
         <Typography variant="h3" align='center' color="initial">Mangas</Typography>
       </Grid>
