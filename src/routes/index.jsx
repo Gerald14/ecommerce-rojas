@@ -9,7 +9,7 @@ const index = () => {
   return (
     <Routes>
       <Route element={<Layout/>}>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<MangasPage/>}/>
         <Route path="/mangas" element={<MangasPage/>}/>
         <Route path="/category/:categoryId" element={<MangasPage/>}/>
         <Route path="/item/:itemId" element={<ItemDetailContainer/>} />
