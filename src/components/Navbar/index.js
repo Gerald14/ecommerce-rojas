@@ -4,7 +4,7 @@ import User from '../../assets/images/User-icon.png'
 import { MenuData } from './components/MenuData'
 import CartWidget from '../CartWidget'
 import { useNavigate } from 'react-router-dom'
-import { AppBar, Box, Container, IconButton, Toolbar } from '@mui/material'
+import { AppBar, Badge, Box, Container, IconButton, Toolbar } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import NavItem from './components/NavItem'
 
