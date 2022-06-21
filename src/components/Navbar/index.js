@@ -3,16 +3,14 @@ import Avatar from '../Avatar'
 import User from '../../assets/images/User-icon.png'
 import { MenuData } from './components/MenuData'
 import CartWidget from '../CartWidget'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { AppBar, Box, Container, IconButton, Toolbar } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
+import NavItem from './components/NavItem'
 
 const NavBar = () => {
   const navigate = useNavigate();
 
-  let activeStyle = {
-    color: "red",
-  };
   const handleClick = () => {
     navigate('/')
   }
@@ -51,16 +49,7 @@ const NavBar = () => {
             <nav className="menu-main" >
               <ul>
                 {MenuData.map((item,index) =>
-                  (<li key={index}>
-                    <NavLink 
-                      to={item.path}
-                      style={({ isActive }) =>
-                        isActive ? activeStyle : undefined
-                      }
-                    >
-                        {item.title}
-                      </NavLink>
-                    </li>)
+                   <NavItem key={index} item={item}/>
                 )}
               </ul>
             </nav>

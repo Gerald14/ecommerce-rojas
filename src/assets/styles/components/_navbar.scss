@@ -11,6 +11,22 @@
         gap:4rem;
     }
 
+    &-navitem{
+        font-size: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+
+        &:hover{
+            color:#ff0000
+        }
+
+        &.active{
+            color:#ff0000
+        }
+    }
+
+    
+
     &-brand{
         display: flex;
         justify-content: center;
