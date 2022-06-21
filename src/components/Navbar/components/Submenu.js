@@ -31,7 +31,7 @@ const Submenu = ({items,anchorEl,hideSubmenu}) => {
         }}
     >
       {items.map((item)=>
-        <MenuItem key={item.id} onClick={()=>handleClick(item.id)}>{item.title}</MenuItem>
+        <MenuItem key={item.id} onClick={()=>handleClick(item.path)}>{item.title}</MenuItem>
       )}
     </Menu>
   )

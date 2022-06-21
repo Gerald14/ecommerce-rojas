@@ -19,7 +19,7 @@ const ItemListContainer  = () => {
         let mangas;
         console.log(categoryId)
         if(categoryId){
-          mangas = MangasData.filter(manga => manga.category === Number(categoryId));
+          mangas = MangasData.filter(manga => manga.category === categoryId);
         }else{
           mangas=MangasData
         }

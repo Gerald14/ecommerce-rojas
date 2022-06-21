@@ -4,12 +4,14 @@ export const MenuData = [
       title: 'Mangas',
       submenu:[
         {
-          id:2,
+          id:1,
           title:'Seinen',
+          path:'seinen'
         },
         {
-          id:1,
+          id:2,
           title:'Shonen',
+          path:'shonen'
         }
       ],
       path: '/mangas'
