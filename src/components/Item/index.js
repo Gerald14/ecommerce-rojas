@@ -2,7 +2,7 @@ import Card from "@mui/material/Card"
 import CardMedia from "@mui/material/CardMedia"
 import CardContent from "@mui/material/CardContent"
 import Typography from "@mui/material/Typography"
-import { CardActions, IconButton } from "@mui/material";
+import { CardActions, IconButton, Tooltip } from "@mui/material";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { Box } from "@mui/system";
@@ -40,16 +40,20 @@ const Item = ({product}) => {
       </CardContent>
       <CardActions sx={{display:{xs:'none',sm:'block'}}}>
         <Box component="div" sx={{display:'flex', gap:'.3rem',alignItems:'center'}}>
-          <IconButton 
-            variant="contained" 
-            aria-label="btn-view" 
-            onClick={handleViewDetail}
-            sx={{backgroundColor:'#272829',color:"white",'&:hover':{backgroundColor:'#272829'}  }}>
-            <RemoveRedEyeOutlinedIcon/>
-          </IconButton>
-          <IconButton variant="contained" aria-label="btn-cart" sx={{backgroundColor:'#272829',color:"white",'&:hover':{backgroundColor:'#272829'} }}>
-            <ShoppingCartOutlinedIcon/>
-          </IconButton>
+          <Tooltip title="Ver detalle">
+            <IconButton 
+              variant="contained" 
+              aria-label="btn-view" 
+              onClick={handleViewDetail}
+              sx={{backgroundColor:'#272829',color:"white",'&:hover':{backgroundColor:'#272829',color:'#5398dc'}  }}>
+              <RemoveRedEyeOutlinedIcon/>
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Agregar a carrito">
+            <IconButton variant="contained" aria-label="btn-cart" sx={{backgroundColor:'#272829',color:"white",'&:hover':{backgroundColor:'#272829',color:'#5398dc'} }}>
+              <ShoppingCartOutlinedIcon/>
+            </IconButton>
+          </Tooltip>
         </Box>
       </CardActions>
     </Card>

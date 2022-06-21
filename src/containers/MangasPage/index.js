@@ -1,4 +1,5 @@
 import { Grid, Typography } from '@mui/material'
+import Filters from '../../components/Filters'
 import ItemListContainer from '../../components/ItemListContainer'
 
 const MangasPage = () => {
@@ -9,7 +10,7 @@ const MangasPage = () => {
         <Typography variant="h3" align='center' color="initial">Mangas</Typography>
       </Grid>
       <Grid item xs={12} md={3}>
-        Filtros
+        <Filters/>
       </Grid>
       <Grid item xs={12} md={9}>
         <ItemListContainer/>
