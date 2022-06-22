@@ -1,11 +1,24 @@
-import { Box, Breadcrumbs, Grid, Link, Paper, Typography } from '@mui/material'
+import { Box, Breadcrumbs, Grid, Link, Paper, Typography, Button } from '@mui/material'
 import Img from './components/Img';
 import ItemCount from '../ItemCount';
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink, useNavigate } from 'react-router-dom'
 import HomeIcon from '@mui/icons-material/Home';
+import { useState } from 'react';
 const mangasImg = require.context('../../assets/images/mangas', true);
 
 const ItemDetail = ({product}) => {
+  const navigate = useNavigate();
+
+  const [quantity, setQuantity] = useState(null)
+
+  const onAdd = (quantityToAdd) => {
+    setQuantity(quantityToAdd)
+  }
+
+  const handleClick = () => {
+    navigate('/cart')
+  }
+
   return (
     <Grid container sx={{width:'100%'}} mt={2}>
       <Grid item xs={12} md={12} mb={2}>
@@ -54,7 +67,10 @@ const ItemDetail = ({product}) => {
           <Typography variant="body1" color="initial" mb={4}>
             {product?.description}
           </Typography>
-          <ItemCount stock={product.stock}/>
+          {!Boolean(quantity) && <ItemCount stock={product.stock} onAdd={onAdd}/>}
+          <Button variant="contained" onClick={handleClick} fullWidth sx={{backgroundColor:'#272829','&:hover':{backgroundColor:'#272829'}}}>
+            Terminar Compra
+          </Button>
         </Box>
       </Grid>
     </Grid>

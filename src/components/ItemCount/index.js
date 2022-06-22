@@ -25,7 +25,7 @@ const ItemCount = ({stock,initial=1,onAdd}) => {
 
   return (
       <Stack spacing={4}>
-        <Box  component='div' sx={{width:'100%',display:'flex' ,gap:'1rem'}}>
+        <Box  component='div' sx={{width:'100%',display:'flex' ,gap:'1rem', margin:'1rem 0'}}>
           <IconButton aria-label="Example" onClick={handleRemove} >
             <RemoveIcon/>
           </IconButton>
@@ -39,10 +39,10 @@ const ItemCount = ({stock,initial=1,onAdd}) => {
           <IconButton aria-label="Example" onClick={handleAdd}>
             <AddIcon/>
           </IconButton>
+          <Button variant="contained" onClick={handleCheck} >
+            Agregar al carrito
+          </Button>
         </Box>
-        <Button variant="contained" onClick={handleCheck} >
-          Agregar al carrito
-        </Button>
       </Stack>
   )
 }
