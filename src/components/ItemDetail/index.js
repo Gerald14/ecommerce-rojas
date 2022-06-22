@@ -69,7 +69,7 @@ const ItemDetail = ({product}) => {
           </Typography>
           {!Boolean(quantity) && <ItemCount stock={product.stock} onAdd={onAdd}/>}
           <Button variant="contained" onClick={handleClick} fullWidth sx={{backgroundColor:'#272829','&:hover':{backgroundColor:'#272829'}}}>
-            Terminar Compra
+            Terminar mi compra
           </Button>
         </Box>
       </Grid>
