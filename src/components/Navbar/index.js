@@ -18,7 +18,7 @@ const NavBar = () => {
   return (
     <AppBar className="navbar" position="fixed">
       <Container maxWidth="xl">
-        <Toolbar >
+        <Toolbar disableGutters>
 
           <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -55,10 +55,7 @@ const NavBar = () => {
             </nav>
           </Box>
           
-          <Box component={'div'} className='menu-secondary' sx={{ flexGrow: 0 }}>
-              <div className="navbar-search">
-                <img src="https://img.icons8.com/ios-glyphs/26/ffffff/search--v1.png"alt='search'/>
-              </div>
+          <Box component={'div'} className='menu-secondary' sx={{ flexGrow: 0 , paddingRight:'.5rem'}}>
               <div className="navbar-account">
                 <Avatar url={User}/>
               </div>
