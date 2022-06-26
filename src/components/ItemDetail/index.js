@@ -1,13 +1,16 @@
-import { Box, Breadcrumbs, Grid, Link, Paper, Typography, Button } from '@mui/material'
+import { Box, Breadcrumbs, Grid, Link, Typography, Button } from '@mui/material'
 import Img from './components/Img';
 import ItemCount from '../ItemCount';
 import { Link as RouterLink, useNavigate } from 'react-router-dom'
 import HomeIcon from '@mui/icons-material/Home';
 import { useState } from 'react';
+import { useContext } from 'react';
+import cartContext from '../../context/CartContent';
 const mangasImg = require.context('../../assets/images/mangas', true);
 
 const ItemDetail = ({product}) => {
   const navigate = useNavigate();
+  const { addItem } = useContext(cartContext);
 
   const [quantity, setQuantity] = useState(null)
 
@@ -16,6 +19,7 @@ const ItemDetail = ({product}) => {
   }
 
   const handleClick = () => {
+    addItem({...product,quantity},quantity);
     navigate('/cart')
   }
 
@@ -69,7 +73,7 @@ const ItemDetail = ({product}) => {
           </Typography>
           {!Boolean(quantity) && <ItemCount stock={product.stock} onAdd={onAdd}/>}
           <Button variant="contained" onClick={handleClick} fullWidth sx={{backgroundColor:'#272829','&:hover':{backgroundColor:'#272829'}}}>
-            Terminar mi compra
+            Comprar
           </Button>
         </Box>
       </Grid>

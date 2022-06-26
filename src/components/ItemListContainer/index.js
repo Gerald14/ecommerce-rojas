@@ -13,17 +13,18 @@ const ItemListContainer  = () => {
 
   useEffect(() => {
 
+    setLoading(true);
     //Simula peticion
     const MocAsync = new Promise((resolve)=>{
       setTimeout(() => {
         let mangas;
-        console.log(categoryId)
         if(categoryId){
+          
           mangas = MangasData.filter(manga => manga.category === categoryId);
+
         }else{
-          mangas=MangasData
+          mangas = MangasData
         }
-        console.log('mangas',mangas)
         resolve(mangas)
       }, 2000);
     });
@@ -31,7 +32,6 @@ const ItemListContainer  = () => {
     //Setea los datos obtenidos de la peticion
     MocAsync
     .then((products) => {
-      console.log(products)
       setProducts(products);
       setLoading(false);
     })
@@ -43,7 +43,6 @@ const ItemListContainer  = () => {
   }, [categoryId])
 
   if(loading) return <div>Cargando</div>
-  console.log('products',products)
   
   return (
         <ItemList products={products}/>

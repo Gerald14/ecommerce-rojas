@@ -40,7 +40,7 @@ const ItemCount = ({stock,initial=1,onAdd}) => {
             <AddIcon/>
           </IconButton>
           <Button variant="contained" onClick={handleCheck} >
-            Agregar al carrito
+            Confirmar
           </Button>
         </Box>
       </Stack>
