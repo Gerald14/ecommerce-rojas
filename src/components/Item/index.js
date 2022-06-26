@@ -7,10 +7,14 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom"
+import { useContext } from "react";
+import cartContext from "../../context/CartContent";
 const mangasImg = require.context('../../assets/images/mangas', true);
 
 
 const Item = ({product}) => {
+
+  const { addItem } = useContext(cartContext);
 
   const Navigate = useNavigate();
 
@@ -19,7 +23,7 @@ const Item = ({product}) => {
   }
 
   const handleAddToCart = () => {
-
+    addItem({...product,quantity:1},1);
   }
 
   return (
@@ -50,7 +54,11 @@ const Item = ({product}) => {
             </IconButton>
           </Tooltip>
           <Tooltip title="Agregar a carrito">
-            <IconButton variant="contained" aria-label="btn-cart" sx={{backgroundColor:'#272829',color:"white",'&:hover':{backgroundColor:'#272829',color:'#5398dc'} }}>
+            <IconButton 
+            variant="contained" 
+            aria-label="btn-cart"
+            onClick={handleAddToCart} 
+            sx={{backgroundColor:'#272829',color:"white",'&:hover':{backgroundColor:'#272829',color:'#5398dc'} }}>
               <ShoppingCartOutlinedIcon/>
             </IconButton>
           </Tooltip>
