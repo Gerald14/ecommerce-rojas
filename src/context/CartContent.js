@@ -40,9 +40,7 @@ export const CartProvider = ({children}) => {
     }
 
     const removeItem = (itemId) => {
-        
         const itemToRemove = data.items.find(item => item.id === itemId);
-        
         setData({
             items: data.items.filter(item => item.id !== itemId),
             quantity: data.quantity - itemToRemove.quantity,
