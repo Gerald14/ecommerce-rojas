@@ -59,6 +59,7 @@ export const CartProvider = ({children}) => {
     const contextValue = {
         data,
         addItem,
+        updateItem,
         removeItem,
         clear
     }

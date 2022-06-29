@@ -1,8 +1,8 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import StyledBadge from './components/StyledBadge';
+import cartContext from '../../context/CartContext';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import cartContext from '../../context/CartContent';
-import StyledBadge from './components/StyledBadge';
 
 const CartWidget = () => {
 

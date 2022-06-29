@@ -1,48 +1,37 @@
 import { Box, Card, CardMedia, FormControl, Grid, OutlinedInput, Typography } from '@mui/material'
 
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+import CartItemCount from './CartItemCount';
 
 const mangasImg = require.context('../../../assets/images/mangas', true);
 
 const CartItem = ({item}) => {
 
-    console.log(item)
+  
   return (
     <Grid container m={0}>
-      <Grid item xs={5} sm={4} md={3}>
-        <Card sx={{width:{xs:100,md:140}, margin:'auto'}}>
+      <Grid item xs={5} sm={3} md={3}>
+        <Card sx={{width:{xs:105,md:142}, marginRight:'auto'}}>
           <CardMedia
               component="img"
-              sx={{ width:{xs:100,md:140}}}
+              sx={{ width:{xs:105,md:142}}}
               image={ mangasImg(`./${item.img}`) }
               alt="Live from space album cover"
           />
         </Card>
       </Grid>
-      <Grid item xs={7} sm={8} md={9} sx={{display:'flex',flexWrap:'wrap'}}>
-        <Box sx={{display:'flex',flexDirection:'column', justifyContent:'center'}}>
-          <Typography variant="h5" color="initial" pl={3}>
+      <Grid item xs={7} sm={9} md={9} className="cart-item-detail">
+        <Box sx={{display:'flex',flexDirection:'column', justifyContent:'center',padding:'.5rem 1rem'}}>
+          <Typography variant="h5" color="initial">
             {item.name}
           </Typography>
-          <Typography variant="subtitle1" color="initial" pl={3}>
+          <Typography variant="subtitle2" color="initial">
             {item.editorial}
           </Typography>
+          <Typography variant="subtitle1" color="primary">
+            {`S/.${item.price.toFixed(2)}`}
+          </Typography>
         </Box>
-        <Typography variant="subtitle1" color="initial">
-          {`S/.${item.price.toFixed(2)}`}
-        </Typography>
-        <Box sx={{display:'flex', flexDirection:'row',alignItems:'center',gap:'.5rem'}}>
-            <RemoveIcon/>
-            <FormControl sx={{ width: '3rem' }}>
-              <OutlinedInput 
-              size='small'
-              value={item.quantity}
-              sx={{'.MuiInputBase-input':{textAlign:'center'}}}
-            />
-            </FormControl>
-            <AddIcon/>
-        </Box>
+        <CartItemCount id={item.id} stock={item.stock} initial={item.quantity}/>
         <Typography 
           variant="subtitle1" 
           color="initial"

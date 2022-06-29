@@ -1,0 +1,8 @@
+@media screen and (max-width: 600px){
+    .cart-item{
+        &-detail{
+            flex-direction: column!important;
+            align-items: flex-start;
+        }
+    }
+}

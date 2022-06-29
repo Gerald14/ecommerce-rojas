@@ -13,10 +13,10 @@ const Cart = () => {
           </Typography>
         </Grid>
         <Grid container spacing={2} m={0} >
-          <Grid item xs={12} md={8} sx={{paddingLeft:'0!important'}}>
+          <Grid item xs={12} sm={12} md={12} lg={8} sx={{paddingLeft:'0!important'}}>
             <CartItemListContainer/>
           </Grid>
-          <Grid item xs={12} md={4} m={0}>
+          <Grid item xs={12} sm={12} md={12} lg={4} m={0}>
             Order Summary
           </Grid>
         </Grid>  
