@@ -1,7 +1,7 @@
 import { Container, Grid, Typography } from '@mui/material'
 
 import CartItemListContainer from './components/CartItemListContainer'
-import React from 'react'
+import CartSummary from './components/CartSummary'
 
 const Cart = () => {
   return (
@@ -12,12 +12,12 @@ const Cart = () => {
             Carrito
           </Typography>
         </Grid>
-        <Grid container spacing={2} m={0} >
+        <Grid container spacing={3} m={0} >
           <Grid item xs={12} sm={12} md={12} lg={8} sx={{paddingLeft:'0!important'}}>
             <CartItemListContainer/>
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={4} m={0}>
-            Order Summary
+            <CartSummary/>
           </Grid>
         </Grid>  
       </Grid>
