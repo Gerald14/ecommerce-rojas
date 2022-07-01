@@ -20,8 +20,8 @@ const CartItemList = ({items}) => {
             Sub Total
           </Typography>
         </Box>
-        {items.map((item)=>
-            <CartItem item={item}/>
+        {items.map((item,index)=>
+            <CartItem key={index} item={item}/>
         )}
     </Stack>
   )

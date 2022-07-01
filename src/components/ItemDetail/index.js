@@ -73,10 +73,13 @@ const ItemDetail = ({product}) => {
           <Typography variant="body1" color="initial" mb={4}>
             {product?.description}
           </Typography>
-          {!Boolean(quantity) && <ItemCount stock={product.stock} onAdd={onAdd}/>}
-          <Button variant="contained" onClick={handleClick} fullWidth sx={{backgroundColor:'#272829','&:hover':{backgroundColor:'#272829'}}}>
-            Comprar
+          {!Boolean(quantity) ?
+           <ItemCount stock={product.stock} onAdd={onAdd}/>:
+           <Button variant="contained" onClick={handleClick} fullWidth sx={{backgroundColor:'#272829','&:hover':{backgroundColor:'#272829'}}}>
+            Terminar Comprar
           </Button>
+         }
+         
         </Box>
       </Grid>
     </Grid>
