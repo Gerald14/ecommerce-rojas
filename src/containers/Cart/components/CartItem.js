@@ -1,11 +1,18 @@
-import { Box, Card, CardMedia, FormControl, Grid, OutlinedInput, Typography } from '@mui/material'
+import { Box, Card, CardMedia, Grid, IconButton, Typography } from '@mui/material'
 
 import CartItemCount from './CartItemCount';
+import DeleteIcon from '@mui/icons-material/Delete';
+import cartContext from '../../../context/CartContext'
+import { useContext } from 'react';
 
 const mangasImg = require.context('../../../assets/images/mangas', true);
 
 const CartItem = ({item}) => {
+  const { removeItem } = useContext(cartContext)
 
+  const handleRemove = () => {
+    removeItem(item.id)
+  }
   
   return (
     <Grid container m={0}>
@@ -39,6 +46,9 @@ const CartItem = ({item}) => {
         >
           {`S/.${(item.price*item.quantity).toFixed(2)}`}
         </Typography>
+        <IconButton variant="text" color="default" onClick={handleRemove}>
+          <DeleteIcon/>
+        </IconButton>
       </Grid>
     </Grid>
   )

@@ -32,7 +32,7 @@ const CartSummary = () => {
             </Typography>
         </Box>
         
-        <Button>
+        <Button variant='contained' fullWidth>
             Checkout
         </Button>
         
