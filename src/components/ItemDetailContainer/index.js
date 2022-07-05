@@ -1,9 +1,8 @@
-import {collection, getDocs} from 'firebase/firestore'
+import {collection, doc, getDoc} from 'firebase/firestore'
 import { useEffect, useState } from "react";
 
 import { Container } from "@mui/material";
 import ItemDetail from "../ItemDetail";
-import { MangasData } from "../../Data/MangasData";
 import { database } from "../../firebase";
 import { useParams } from 'react-router-dom';
 
@@ -17,12 +16,11 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     
     setLoading(true)
-    const consulta = getDocs(collection(database,"mangas"))
+    const consulta = getDoc(doc(database,"mangas",itemId));
 
-    consulta.then((result) => {
-      let mangas = result.docs.map(manga =>({...manga.data(),id:manga.id}));
-      const  mangaObj = mangas.filter(manga => manga.id === itemId)[0];
-      setProduct(mangaObj)
+    consulta.then((manga) => {
+      console.log('manga',manga)
+      setProduct({id:manga.id, ...manga.data()})
       setLoading(false);
     })
     return () => {

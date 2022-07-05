@@ -17,7 +17,7 @@ const ItemListContainer  = () => {
     
     setLoading(true);
     
-    const filter = categoryId ? query(collection(database,"mangas"),where("category","==",categoryId), orderBy("title","asc")): collection(database,"mangas");
+    const filter = categoryId ? query(collection(database,"mangas"),where("category","==",categoryId), orderBy("title","asc")):query(collection(database,"mangas"), orderBy("title","asc"));
     const consulta = getDocs(filter);
 
     consulta.then((result) => {
