@@ -29,7 +29,7 @@ const CartItem = ({item}) => {
       <Grid item xs={7} sm={9} md={9} className="cart-item-detail">
         <Box sx={{display:'flex',flexDirection:'column', justifyContent:'center',padding:'.5rem 1rem'}}>
           <Typography variant="h5" color="initial">
-            {item.name}
+            {item.title}
           </Typography>
           <Typography variant="subtitle2" color="initial">
             {item.editorial}
