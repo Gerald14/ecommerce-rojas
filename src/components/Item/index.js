@@ -38,7 +38,7 @@ const Item = ({product}) => {
       />
       <CardContent sx={{height:'inherit'}}>
         <Typography gutterBottom variant="h5" sx={{ fontSize: 16 }} component="div" textAlign='center'>
-          {product.name}
+          {product.title}
         </Typography>
         <Typography variant="body2" color="text.secondary" textAlign='center'>
           {product.price}

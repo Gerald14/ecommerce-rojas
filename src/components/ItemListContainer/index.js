@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
-import { MangasData } from '../../Data/MangasData';
-import ItemList from '../ItemList'
+import {collection, getDocs, orderBy, query, where} from 'firebase/firestore'
 
+import ItemList from '../ItemList'
+import { MangasData } from '../../Data/MangasData';
+import { database } from "../../firebase";
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer  = () => {
 
@@ -12,30 +14,17 @@ const ItemListContainer  = () => {
   let { categoryId } = useParams();
 
   useEffect(() => {
-
+    
     setLoading(true);
-    //Simula peticion
-    const MocAsync = new Promise((resolve)=>{
-      setTimeout(() => {
-        let mangas;
-        if(categoryId){
-          
-          mangas = MangasData.filter(manga => manga.category === categoryId);
+    
+    const filter = categoryId ? query(collection(database,"mangas"),where("category","==",categoryId), orderBy("title","asc")): collection(database,"mangas");
+    const consulta = getDocs(filter);
 
-        }else{
-          mangas = MangasData
-        }
-        resolve(mangas)
-      }, 2000);
-    });
-
-    //Setea los datos obtenidos de la peticion
-    MocAsync
-    .then((products) => {
-      setProducts(products);
+    consulta.then((result) => {
+      let mangas = result.docs.map(manga =>({...manga.data(),id:manga.id}));
+      setProducts(mangas)
       setLoading(false);
     })
-    .catch((error) => console.error(error))
     
     return () => {
       setProducts([]);

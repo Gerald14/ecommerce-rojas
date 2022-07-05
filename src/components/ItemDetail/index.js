@@ -52,7 +52,7 @@ const ItemDetail = ({product}) => {
             sx={{ display: 'flex', alignItems: 'center' }}
             color="text.primary"
           >
-            {product.name}
+            {product.title}
           </Typography>
         </Breadcrumbs>
       </Grid>
@@ -65,7 +65,7 @@ const ItemDetail = ({product}) => {
             {product.editorial}
           </Typography>
           <Typography variant="h4" color="initial" sx={{textTransform:'uppercase', fontWeight:'600'}}>
-            {product.name}
+            {product.title}
           </Typography>
           <Typography variant="h5" color="initial" gutterBottom>
             {`S/.${product.price}`}

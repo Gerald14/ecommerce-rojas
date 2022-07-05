@@ -1,9 +1,11 @@
+import {collection, getDocs} from 'firebase/firestore'
 import { useEffect, useState } from "react";
-import ItemDetail from "../ItemDetail";
-import { useParams } from 'react-router-dom';
-import { MangasData } from "../../Data/MangasData";
-import { Container } from "@mui/material";
 
+import { Container } from "@mui/material";
+import ItemDetail from "../ItemDetail";
+import { MangasData } from "../../Data/MangasData";
+import { database } from "../../firebase";
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 
@@ -14,20 +16,15 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     
-    const MocAsync = new Promise((resolve)=>{
-      setTimeout(() => {
-        const mangaObj = MangasData.filter(manga => manga.id == itemId)[0];
-        resolve(mangaObj)
-      }, 2000);
-    });
+    setLoading(true)
+    const consulta = getDocs(collection(database,"mangas"))
 
-    MocAsync
-    .then((product) => {
-      setProduct(product);
+    consulta.then((result) => {
+      let mangas = result.docs.map(manga =>({...manga.data(),id:manga.id}));
+      const  mangaObj = mangas.filter(manga => manga.id === itemId)[0];
+      setProduct(mangaObj)
       setLoading(false);
     })
-    .catch((error) => console.error(error))
-  
     return () => {
       setProduct();
     }
