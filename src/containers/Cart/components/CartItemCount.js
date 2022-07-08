@@ -15,7 +15,7 @@ const CartItemCount = ({id,stock,initial=1}) => {
     }
     
     const handleRemove = () => {
-        if(initial > 0)
+        if(initial-1 > 0)
             updateItem(id,initial-1)
     }
       
@@ -24,10 +24,10 @@ const CartItemCount = ({id,stock,initial=1}) => {
         <RemoveIcon onClick={handleRemove}/>
         <FormControl sx={{ width: '2.5rem' }}>
             <OutlinedInput 
-            size='small'
-            value={initial}
-            sx={{'.MuiInputBase-input':{textAlign:'center',border:'none'}}}
-        />
+                size='small'
+                value={initial}
+                sx={{'.MuiInputBase-input':{textAlign:'center',border:'none'}}}
+            />
         </FormControl>
         <AddIcon onClick={handleAdd}/>
     </Box>

@@ -4,7 +4,7 @@ import NavBar from "../Navbar"
 import { Outlet } from "react-router-dom"
 import { styled } from "@mui/material";
 
-const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
+const Offset = styled('div')(({ theme }) => {console.log(); return theme.mixins.toolbar});
 
 const Layout = () => {
   return (

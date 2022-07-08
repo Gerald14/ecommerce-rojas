@@ -2,10 +2,16 @@ import {Box, Button, Divider, Typography} from '@mui/material'
 
 import cartContext from '../../../context/CartContext'
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const CartSummary = () => {
 
+    const navigate = useNavigate();
     const {data:{quantity,amount}} = useContext(cartContext)
+
+    const handleClick = () => {
+        navigate('/checkout')
+    }
     
   return (
     <Box component='div' sx={{backgroundColor:'#f2f2f2',padding:'1rem'}}>
@@ -31,7 +37,7 @@ const CartSummary = () => {
                 </Typography>
             </Box>
             
-            <Button variant='contained' fullWidth>
+            <Button variant='contained' fullWidth onClick={handleClick}>
                 Checkout
             </Button>
             
