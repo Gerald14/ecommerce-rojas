@@ -50,7 +50,7 @@ const CheckoutInfo = ({finishOrder}) => {
                 sx={{display:'flex',flexDirection:'row',gap:2,flexGrow:1}}>
                 <TextField
                   required
-                  id="outlined-name"
+                  id="name"
                   label="Nombres"
                   size='small'
                   name="name"
@@ -59,7 +59,7 @@ const CheckoutInfo = ({finishOrder}) => {
                 />
                 <TextField
                   required
-                  id="outlined-name"
+                  id="lastname"
                   label="Apellidos"
                   size='small'
                   name="lastname"
@@ -69,7 +69,7 @@ const CheckoutInfo = ({finishOrder}) => {
               </Box>
               <TextField
                 required
-                id="outlined-name"
+                id="tel"
                 label="Celular"
                 size='small'
                 name="cel"
@@ -77,7 +77,7 @@ const CheckoutInfo = ({finishOrder}) => {
               />
               <TextField
                 required
-                id="outlined-name"
+                id="email"
                 label="Correo Electronico"
                 placeholder='mangas@gmail.com'
                 size='small'
