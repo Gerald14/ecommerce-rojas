@@ -25,7 +25,6 @@ const NavItem = ({item}) => {
         {item.title}
         {item.submenu && 
             <Submenu 
-            items={item.submenu} 
             anchorEl={anchorEl} 
             hideSubmenu={hideSubmenu}/>}
     </li>

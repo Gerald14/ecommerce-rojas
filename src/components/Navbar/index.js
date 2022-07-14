@@ -7,10 +7,12 @@ import { useNavigate } from 'react-router-dom'
 import { AppBar, Badge, Box, Container, IconButton, Toolbar } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import NavItem from './components/NavItem'
+import { collection, getDocs, orderBy } from 'firebase/firestore'
+import { database } from '../../firebase'
 
 const NavBar = () => {
   const navigate = useNavigate();
-
+  
   const handleClick = () => {
     navigate('/')
   }
