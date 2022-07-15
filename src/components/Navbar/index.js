@@ -25,7 +25,7 @@ const NavBar = () => {
         const uid = user.uid;
         console.log(user)
       } else {
-        navigate('/login')
+        
       }
     });
    

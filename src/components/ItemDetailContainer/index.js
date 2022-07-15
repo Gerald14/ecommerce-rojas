@@ -1,4 +1,4 @@
-import {collection, doc, getDoc} from 'firebase/firestore'
+import {doc, getDoc} from 'firebase/firestore'
 import { useEffect, useState } from "react";
 
 import { Container } from "@mui/material";
@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
     return () => {
       setProduct();
     }
-  }, [])
+  }, [itemId])
   
   if(loading) return <div>Cargando</div>
 

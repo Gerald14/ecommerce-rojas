@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import {collection, getDocs, orderBy, query, where} from 'firebase/firestore'
 
 import ItemList from '../ItemList'
-import { MangasData } from '../../Data/MangasData';
 import { database } from "../../firebase";
 import { useParams } from 'react-router-dom';
 
