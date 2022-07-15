@@ -5,10 +5,12 @@ import Checkout from "../containers/Checkout"
 import ItemDetailContainer from "../components/ItemDetailContainer"
 import Layout from "../components/Layout"
 import MangasPage from "../containers/MangasPage"
+import Login from '../containers/Login'
 
 const index = () => {
   return (
     <Routes>
+      <Route path="/login" element={<Login/>}/>
       <Route element={<Layout/>}>
         <Route path="/" element={<MangasPage/>}/>
         <Route path="/mangas" element={<MangasPage/>}/>

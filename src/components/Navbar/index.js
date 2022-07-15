@@ -1,21 +1,39 @@
 import Logo from '../../assets/images/Logo-manga.png'
-import Avatar from '../Avatar'
-import User from '../../assets/images/User-icon.png'
 import { MenuData } from './components/MenuData'
 import CartWidget from '../CartWidget'
 import { useNavigate } from 'react-router-dom'
-import { AppBar, Badge, Box, Container, IconButton, Toolbar } from '@mui/material'
+import { AppBar, Avatar, Box, Container, IconButton, Toolbar } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import NavItem from './components/NavItem'
-import { collection, getDocs, orderBy } from 'firebase/firestore'
-import { database } from '../../firebase'
+import { useEffect, useState } from 'react'
+import { auth } from '../../firebase'
+import { onAuthStateChanged } from 'firebase/auth'
 
 const NavBar = () => {
   const navigate = useNavigate();
+
+  const [User, setUser] = useState({})
   
   const handleClick = () => {
     navigate('/')
   }
+   useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        console.log(user)
+      } else {
+        navigate('/login')
+      }
+    });
+   
+     return () => {
+       setUser({})
+     }
+   }, [])
+   
 
   return (
     <AppBar className="navbar" position="fixed">
@@ -59,7 +77,7 @@ const NavBar = () => {
           
           <Box component={'div'} className='menu-secondary' sx={{ flexGrow: 0 , paddingRight:'.5rem'}}>
               <div className="navbar-account">
-                <Avatar url={User}/>
+                <Avatar alt="Remy Sharp" src="" />
               </div>
               <CartWidget/>
           </Box>
