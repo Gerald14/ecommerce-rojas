@@ -29,12 +29,31 @@ Para la instalacion del proyecto es necesario seguir los siguientes pasos.
 ```
 npm run start
 ```
-## Demo
+Para su uso se explicara de una manera breve, al inicio de la pagina podra visualizar la lista de los mangas.
 
+Luego podra ver o comprar directamente desde la lista, al visualizar el manga se podra ver a detalle.
+Luego de agregarlo al carrito procede al checkout el cual le pedira sus datos para generar la orden.
+
+Finalmente al darle en comprar se le mostrara el id de su orden.
+## Demo
+Aqui tienes una [demo](https://mangaastore.netlify.app/) del proyecto a probar.
 ## Screenshoots
+`Lista de los mangas`
 ![alt text](https://i.postimg.cc/GtPyDmL1/List-Items.png "Lista de mangas")
 
 
+`Detalle de un manga`
 ![alt text](https://i.postimg.cc/66z68Zwp/Manga-Detail.png "Detalle de manga")
 
+
+`Submenu de categorias`
 ![alt text](https://i.postimg.cc/y808Yb8w/category.png "Detalle de manga")
+
+`Carrito`
+![alt text](https://i.postimg.cc/L419T8cz/carrito.png "Detalle de manga")
+
+`Checkout`
+![alt text](https://i.postimg.cc/mgrKmdP0/checkout.png "Detalle de manga")
+
+`Fin de compra`
+![alt text](https://i.postimg.cc/65WPQHfy/finishcompra.png "Detalle de manga")
