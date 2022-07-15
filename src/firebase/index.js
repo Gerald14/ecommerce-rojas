@@ -1,8 +1,8 @@
 // Import the functions you need from the SDKs you need
 
-import {getFirestore} from "firebase/firestore"
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -10,16 +10,16 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCzBeC_h31gZZMLyFHE7Er7NTgqE49rhAM",
-  authDomain: "eccomerce-mangas.firebaseapp.com",
-  projectId: "eccomerce-mangas",
-  storageBucket: "eccomerce-mangas.appspot.com",
-  messagingSenderId: "372257075860",
-  appId: "1:372257075860:web:3ef7fd69288920c1973a81",
-  measurementId: "G-SYKM2BJ0KR"
+  apiKey: 'AIzaSyCzBeC_h31gZZMLyFHE7Er7NTgqE49rhAM',
+  authDomain: 'eccomerce-mangas.firebaseapp.com',
+  projectId: 'eccomerce-mangas',
+  storageBucket: 'eccomerce-mangas.appspot.com',
+  messagingSenderId: '372257075860',
+  appId: '1:372257075860:web:3ef7fd69288920c1973a81',
+  measurementId: 'G-SYKM2BJ0KR',
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const database = getFirestore(app);
-export const auth = getAuth()
+export const auth = getAuth();

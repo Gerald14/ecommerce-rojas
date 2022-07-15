@@ -23,6 +23,7 @@ const Submenu = ({anchorEl,hideSubmenu}) => {
         let categoriesResult = result.docs.map(category =>({...category.data(),id:category.id}));
         setCategories(categoriesResult);
       })
+
       return () => {
         setCategories([])
       }
@@ -30,23 +31,25 @@ const Submenu = ({anchorEl,hideSubmenu}) => {
 
   return (
     <Menu 
-        id=""
-        anchorEl={anchorEl} 
-        open={Boolean(anchorEl)} 
-        anchorReference="anchorPosition"
-        onClose={hideSubmenu}
-        anchorPosition={{ top: 64, left: 260 }}
-        anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
-        }}
-        transformOrigin={{
-            vertical: 'top',
-            horizontal: 'left',
-        }}
+      id=""
+      anchorEl={anchorEl} 
+      open={Boolean(anchorEl)} 
+      anchorReference="anchorPosition"
+      onClose={hideSubmenu}
+      anchorPosition={{ top: 64, left: 260 }}
+      anchorOrigin={{
+        vertical: 'bottom',
+        horizontal: 'left',
+      }}
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'left',
+      }}
     >
       {categories.map((category)=>
-        <MenuItem key={category.id} onClick={()=>handleClick(category.name)}>{category.name}</MenuItem>
+        <MenuItem key={category.id} onClick={()=>handleClick(category.name)}>
+          {category.name}
+        </MenuItem>
       )}
     </Menu>
   )

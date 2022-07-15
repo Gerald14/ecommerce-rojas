@@ -1,32 +1,32 @@
-import { Box, Breadcrumbs, Button, Grid, Link, Typography } from '@mui/material'
-import { Link as RouterLink, useNavigate } from 'react-router-dom'
-
+import {
+  Box, Breadcrumbs, Button, Grid, Link, Typography,
+} from '@mui/material';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
-import Img from './components/Img';
+import { useContext, useState } from 'react';
+import PropTypes from 'prop-types';
+import Img from './styled/Img';
 import ItemCount from '../ItemCount';
 import cartContext from '../../context/CartContext';
-import { useContext } from 'react';
-import { useState } from 'react';
 
 const mangasImg = require.context('../../assets/images/mangas', true);
 
-const ItemDetail = ({product}) => {
+function ItemDetail({ product }) {
   const navigate = useNavigate();
   const { addItem } = useContext(cartContext);
-
-  const [quantity, setQuantity] = useState(null)
+  const [quantity, setQuantity] = useState(null);
 
   const onAdd = (quantityToAdd) => {
-    setQuantity(quantityToAdd)
-  }
+    setQuantity(quantityToAdd);
+  };
 
   const handleClick = () => {
-    addItem({...product,quantity},quantity);
-    navigate('/cart')
-  }
+    addItem({ ...product, quantity }, quantity);
+    navigate('/cart');
+  };
 
   return (
-    <Grid container sx={{width:'100%'}} mt={2}>
+    <Grid container sx={{ width: '100%' }} mt={2}>
       <Grid item xs={12} md={12} mb={2}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link
@@ -57,14 +57,14 @@ const ItemDetail = ({product}) => {
         </Breadcrumbs>
       </Grid>
       <Grid item xs={12} sm={5}>
-        <Img src={ mangasImg(`./${product.img}`)} alt={product.name} srcSet={ mangasImg(`./${product.img}`)} />
+        <Img src={mangasImg(`./${product.img}`)} alt={product.title} srcSet={mangasImg(`./${product.img}`)} />
       </Grid>
       <Grid item xs={12} sm={7}>
-        <Box component='div' m={3}>
+        <Box component="div" m={3}>
           <Typography variant="subtitle1" gutterBottom component="div">
             {product.editorial}
           </Typography>
-          <Typography variant="h4" color="initial" sx={{textTransform:'uppercase', fontWeight:'600'}}>
+          <Typography variant="h4" color="initial" sx={{ textTransform: 'uppercase', fontWeight: '600' }}>
             {product.title}
           </Typography>
           <Typography variant="h5" color="initial" gutterBottom>
@@ -73,17 +73,29 @@ const ItemDetail = ({product}) => {
           <Typography variant="body1" color="initial" mb={4}>
             {product?.description}
           </Typography>
-          {!Boolean(quantity) ?
-           <ItemCount stock={product.stock} onAdd={onAdd}/>:
-           <Button variant="contained" onClick={handleClick} fullWidth sx={{backgroundColor:'#272829','&:hover':{backgroundColor:'#272829'}}}>
-            Terminar Comprar
-          </Button>
-         }
-         
+          {!quantity
+            ? <ItemCount stock={product.stock} onAdd={onAdd} />
+            : (
+              <Button variant="contained" onClick={handleClick} fullWidth sx={{ backgroundColor: '#272829', '&:hover': { backgroundColor: '#272829' } }}>
+                Terminar Comprar
+              </Button>
+            )}
+
         </Box>
       </Grid>
     </Grid>
-  )
+  );
 }
 
-export default ItemDetail
+ItemDetail.propTypes = {
+  product: PropTypes.shape({
+    title: PropTypes.string,
+    img: PropTypes.string,
+    editorial: PropTypes.string,
+    description: PropTypes.string,
+    price: PropTypes.number,
+    stock: PropTypes.number,
+  }).isRequired,
+};
+
+export default ItemDetail;

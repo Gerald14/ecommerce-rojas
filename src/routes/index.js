@@ -1,26 +1,23 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes } from 'react-router-dom';
+import Cart from '../pages/Cart';
+import Checkout from '../pages/Checkout';
+import ItemDetailContainer from '../components/ItemDetailContainer';
+import Layout from '../components/Layout';
+import MangasPage from '../pages/MangasPage';
+import Login from '../pages/Login';
 
-import Cart from "../containers/Cart"
-import Checkout from "../containers/Checkout"
-import ItemDetailContainer from "../components/ItemDetailContainer"
-import Layout from "../components/Layout"
-import MangasPage from "../containers/MangasPage"
-import Login from '../containers/Login'
+const index = () => (
+  <Routes>
+    <Route path="/login" element={<Login />} />
+    <Route element={<Layout />}>
+      <Route path="/" element={<MangasPage />} />
+      <Route path="/mangas" element={<MangasPage />} />
+      <Route path="/category/:categoryId" element={<MangasPage />} />
+      <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/checkout" element={<Checkout />} />
+    </Route>
+  </Routes>
+);
 
-const index = () => {
-  return (
-    <Routes>
-      <Route path="/login" element={<Login/>}/>
-      <Route element={<Layout/>}>
-        <Route path="/" element={<MangasPage/>}/>
-        <Route path="/mangas" element={<MangasPage/>}/>
-        <Route path="/category/:categoryId" element={<MangasPage/>}/>
-        <Route path="/item/:itemId" element={<ItemDetailContainer/>} />
-        <Route path="/cart" element={<Cart/>} />
-        <Route path="/checkout" element={<Checkout/>} />
-      </Route>
-    </Routes>
-  )
-}
-
-export default index
+export default index;

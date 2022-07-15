@@ -1,15 +1,20 @@
-import { Box } from '@mui/material'
+import { Box } from '@mui/material';
+import PropTypes from 'prop-types';
 import Item from '../Item';
 
-const ItemList = ({products}) => {
-
+function ItemList({ products }) {
   return (
-    <Box component='div' className='product-list' m={5}>
-        {products.length>0 && products.map((product,index) =>
-            <Item key={index} product={product}/>
-        )}
+    <Box component="div" className="product-list" m={5}>
+      {products.length > 0
+       && products.map((product) => <Item key={product.id} product={product} />)}
     </Box>
-  )
+  );
 }
 
-export default ItemList
+ItemList.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+  })).isRequired,
+};
+
+export default ItemList;

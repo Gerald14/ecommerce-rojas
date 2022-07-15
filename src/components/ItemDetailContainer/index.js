@@ -1,40 +1,37 @@
-import {doc, getDoc} from 'firebase/firestore'
-import { useEffect, useState } from "react";
-
-import { Container } from "@mui/material";
-import ItemDetail from "../ItemDetail";
-import { database } from "../../firebase";
+import { doc, getDoc } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { Container } from '@mui/material';
 import { useParams } from 'react-router-dom';
+import ItemDetail from '../ItemDetail';
+import { database } from '../../firebase';
 
-const ItemDetailContainer = () => {
-
+function ItemDetailContainer() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  let { itemId } = useParams();
+  const { itemId } = useParams();
 
   useEffect(() => {
-    
-    setLoading(true)
-    const consulta = getDoc(doc(database,"mangas",itemId));
+    setLoading(true);
+    const consulta = getDoc(doc(database, 'mangas', itemId));
 
     consulta.then((manga) => {
-      console.log('manga',manga)
-      setProduct({id:manga.id, ...manga.data()})
+      setProduct({ id: manga.id, ...manga.data() });
       setLoading(false);
-    })
+    });
+
     return () => {
       setProduct();
-    }
-  }, [itemId])
-  
-  if(loading) return <div>Cargando</div>
+    };
+  }, [itemId]);
+
+  if (loading) return <div>Cargando</div>;
 
   return (
-    <Container >
-      <ItemDetail product={product}/>
+    <Container>
+      <ItemDetail product={product} />
     </Container>
-  )
+  );
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

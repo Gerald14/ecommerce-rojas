@@ -1,22 +1,19 @@
-import { Box, Step, StepLabel, Stepper, Typography } from '@mui/material';
+import {
+  Box, Step, StepLabel, Stepper, Typography,
+} from '@mui/material';
 
 import { useState } from 'react';
 
 const steps = ['Información del cliente', 'Create an ad group', 'Create an ad'];
 
-const StepContainer = () => {
-
+function StepContainer() {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
 
-  const isStepOptional = (step) => {
-    return step === 1;
-  };
+  const isStepOptional = (step) => step === 1;
 
-  const isStepSkipped = (step) => {
-    return skipped.has(step);
-  };
-    
+  const isStepSkipped = (step) => skipped.has(step);
+
   return (
     <Box sx={{ width: '100%' }}>
       <Stepper activeStep={activeStep}>
@@ -39,7 +36,7 @@ const StepContainer = () => {
         })}
       </Stepper>
     </Box>
-  )
+  );
 }
 
-export default StepContainer
+export default StepContainer;

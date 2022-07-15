@@ -1,34 +1,27 @@
-import Logo from '../../assets/images/Logo-manga.png'
-import { MenuData } from './components/MenuData'
-import CartWidget from '../CartWidget'
-import { useNavigate } from 'react-router-dom'
-import { AppBar, Avatar, Box, Container, IconButton, Toolbar } from '@mui/material'
+import { useNavigate } from 'react-router-dom';
+import {
+  AppBar, Avatar, Box, Container, IconButton, Toolbar,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import NavItem from './components/NavItem'
-import { useEffect } from 'react'
-import { auth } from '../../firebase'
-import { onAuthStateChanged } from 'firebase/auth'
+import { useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import Logo from '../../assets/images/Logo-manga.png';
+import { MenuData } from './components/MenuData';
+import CartWidget from '../CartWidget';
+import NavItem from './components/NavItem';
+import { auth } from '../../firebase';
 
-const NavBar = () => {
+function NavBar() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/')
-  }
-   useEffect(() => {
+    navigate('/');
+  };
+  useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        const uid = user.uid;
-        console.log(uid)
-      } else {
-        
-      }
+
     });
-   
-   }, [])
-   
+  }, []);
 
   return (
     <AppBar className="navbar" position="fixed">
@@ -41,18 +34,19 @@ const NavBar = () => {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={()=>null}
+              onClick={() => null}
               color="inherit"
             >
               <MenuIcon />
             </IconButton>
           </Box>
 
-          <Box 
-            component={'div'} 
-            className="navbar-brand" 
-            sx={{flexGrow:{xs:1,md:0}}}
-            onClick={handleClick}>
+          <Box
+            component="div"
+            className="navbar-brand"
+            sx={{ flexGrow: { xs: 1, md: 0 } }}
+            onClick={handleClick}
+          >
             <img src={Logo} alt="Logo" />
             <div className="navbar-brand-text">
               <span>Manga</span>
@@ -60,27 +54,25 @@ const NavBar = () => {
             </div>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, marginLeft:'2rem' }}>
-            <nav className="menu-main" >
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, marginLeft: '2rem' }}>
+            <nav className="menu-main">
               <ul>
-                {MenuData.map((item,index) =>
-                   <NavItem key={index} item={item}/>
-                )}
+                {MenuData.map((item) => <NavItem key={item.id} item={item} />)}
               </ul>
             </nav>
           </Box>
-          
-          <Box component={'div'} className='menu-secondary' sx={{ flexGrow: 0 , paddingRight:'.5rem'}}>
-              <div className="navbar-account">
-                <Avatar alt="Remy Sharp" src="" />
-              </div>
-              <CartWidget/>
+
+          <Box component="div" className="menu-secondary" sx={{ flexGrow: 0, paddingRight: '.5rem' }}>
+            <div className="navbar-account">
+              <Avatar alt="Remy Sharp" src="" />
+            </div>
+            <CartWidget />
           </Box>
         </Toolbar>
-        
+
       </Container>
     </AppBar>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;
