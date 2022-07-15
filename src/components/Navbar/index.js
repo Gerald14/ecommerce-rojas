@@ -12,8 +12,6 @@ import { onAuthStateChanged } from 'firebase/auth'
 const NavBar = () => {
   const navigate = useNavigate();
 
-  const [User, setUser] = useState({})
-  
   const handleClick = () => {
     navigate('/')
   }
@@ -23,7 +21,7 @@ const NavBar = () => {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         const uid = user.uid;
-        console.log(user)
+        console.log(uid)
       } else {
         
       }

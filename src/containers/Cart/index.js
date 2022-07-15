@@ -7,7 +7,7 @@ import cartContext from '../../context/CartContext'
 import { useContext } from 'react'
 
 const Cart = () => {
-  const {data:{quantity,amount}} = useContext(cartContext)
+  const {data:{quantity}} = useContext(cartContext)
   
   return (
     <Container>
