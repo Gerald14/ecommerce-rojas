@@ -3,7 +3,7 @@ import {
 } from '@mui/material';
 import { addDoc, collection } from 'firebase/firestore';
 import { useContext, useState } from 'react';
-
+import PropTypes from 'prop-types';
 import cartContext from '../../../context/CartContext';
 import { database } from '../../../firebase/index';
 
@@ -101,8 +101,8 @@ function CheckoutInfo({ finishOrder }) {
   );
 }
 
-CheckoutInfo.proptypes = {
-  
-}
+CheckoutInfo.propTypes = {
+  finishOrder: PropTypes.func.isRequired,
+};
 
 export default CheckoutInfo;

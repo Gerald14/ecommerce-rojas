@@ -19,7 +19,7 @@ function NavBar() {
   };
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-
+      console.log(user);
     });
   }, []);
 

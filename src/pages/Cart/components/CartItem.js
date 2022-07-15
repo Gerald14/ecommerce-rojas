@@ -62,6 +62,12 @@ function CartItem({ item }) {
 CartItem.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.number,
+    img: PropTypes.string,
+    title: PropTypes.string,
+    editorial: PropTypes.string,
+    price: PropTypes.number,
+    quantity: PropTypes.number,
+    stock: PropTypes.number,
   }).isRequired,
 };
 

@@ -1,11 +1,9 @@
-import { Typography } from "@mui/material"
+import { Typography } from '@mui/material';
 
-const Home = () => {
+function Home() {
   return (
-    <>
-        <Typography variant="h3">Inicio</Typography>
-    </>
-  )
+    <Typography variant="h3">Inicio</Typography>
+  );
 }
 
-export default Home
+export default Home;

@@ -2,6 +2,7 @@ import { Box, FormControl, OutlinedInput } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useContext } from 'react';
+import PropTypes from 'prop-types';
 import cartContext from '../../../context/CartContext';
 
 function CartItemCount({ id, stock, initial = 1 }) {
@@ -32,5 +33,12 @@ function CartItemCount({ id, stock, initial = 1 }) {
     </Box>
   );
 }
+
+CartItemCount.propTypes = {
+  id: PropTypes.number.isRequired,
+  stock: PropTypes.number.isRequired,
+  // eslint-disable-next-line react/require-default-props
+  initial: PropTypes.number,
+};
 
 export default CartItemCount;

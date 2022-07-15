@@ -1,6 +1,7 @@
 import {
   Box, Card, CardMedia, Grid, Typography,
 } from '@mui/material';
+import PropTypes from 'prop-types';
 
 const mangasImg = require.context('../../../assets/images/mangas', true);
 
@@ -36,5 +37,14 @@ function SummaryItem({ item }) {
     </Grid>
   );
 }
+
+SummaryItem.propTypes = {
+  item: PropTypes.shape({
+    img: PropTypes.string,
+    title: PropTypes.string,
+    editorial: PropTypes.string,
+    price: PropTypes.number,
+  }).isRequired,
+};
 
 export default SummaryItem;

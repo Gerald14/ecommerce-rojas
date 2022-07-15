@@ -1,4 +1,5 @@
 import { Box, Stack, Typography } from '@mui/material';
+import PropTypes from 'prop-types';
 import CartItem from './CartItem';
 
 function CartItemList({ items }) {
@@ -21,9 +22,15 @@ function CartItemList({ items }) {
           Sub Total
         </Typography>
       </Box>
-      {items.map((item, index) => <CartItem key={index} item={item} />)}
+      {items.map((item) => <CartItem key={item.id} item={item} />)}
     </Stack>
   );
 }
+
+CartItemList.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.id,
+  })).isRequired,
+};
 
 export default CartItemList;
