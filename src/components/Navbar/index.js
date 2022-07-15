@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { AppBar, Avatar, Box, Container, IconButton, Toolbar } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import NavItem from './components/NavItem'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { auth } from '../../firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 
@@ -27,9 +27,6 @@ const NavBar = () => {
       }
     });
    
-     return () => {
-       setUser({})
-     }
    }, [])
    
 
