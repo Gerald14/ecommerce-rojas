@@ -1,4 +1,4 @@
-export const MenuData = [
+const MenuData = [
   {
     id: 1,
     title: 'Mangas',
@@ -11,3 +11,4 @@ export const MenuData = [
     submenu: false,
   },
 ];
+export default MenuData;

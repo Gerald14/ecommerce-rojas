@@ -6,10 +6,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import Logo from '../../assets/images/Logo-manga.png';
-import { MenuData } from './components/MenuData';
 import CartWidget from '../CartWidget';
 import NavItem from './components/NavItem';
 import { auth } from '../../firebase';
+import MenuData from './components/MenuData';
 
 function NavBar() {
   const navigate = useNavigate();

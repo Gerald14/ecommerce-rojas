@@ -1,6 +1,7 @@
 import {
   Box, Button, Checkbox, FormControlLabel, TextField,
 } from '@mui/material';
+import PropTypes from 'prop-types';
 
 function LoginForm({ handleSubmit }) {
   return (
@@ -40,5 +41,9 @@ function LoginForm({ handleSubmit }) {
     </Box>
   );
 }
+
+LoginForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};
 
 export default LoginForm;
