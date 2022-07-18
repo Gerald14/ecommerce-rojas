@@ -1,6 +1,6 @@
 # Manga Store
 ## Descripcion
-Una aplicacion web creada para la venta de mangas, en el cual se puede observar mangas segun categoria, ver detalle de cada manga y un carrito el cual visualizara los mangas que va añadiendo para comprar
+Una aplicacion web creada para la venta de mangas de distintas editoriales, en el cual se puede observar mangas segun categoria, ver detalle de cada manga y un carrito el cual visualizara los mangas que va añadiendo para comprar
 
 ### Tecnologias
 Para este proyecto se utilizo las siguientes tecnologias
@@ -27,7 +27,7 @@ Para la instalacion del proyecto es necesario seguir los siguientes pasos.
 ```
 3. Finalmente, ejecutar el proyecto
 ```
-npm run start
+> npm run start
 ```
 Para su uso se explicara de una manera breve, al inicio de la pagina podra visualizar la lista de los mangas.
 

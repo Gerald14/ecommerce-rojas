@@ -4,6 +4,7 @@ import { Container } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail';
 import { database } from '../../firebase';
+import LoaderDetail from './components/LoaderDetail';
 
 function ItemDetailContainer() {
   const [product, setProduct] = useState(null);
@@ -25,7 +26,7 @@ function ItemDetailContainer() {
     };
   }, [itemId]);
 
-  if (loading) return <div>Cargando</div>;
+  if (loading) return <LoaderDetail />;
 
   return (
     <Container>
