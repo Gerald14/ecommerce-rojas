@@ -14,6 +14,8 @@ Se hizo uso de:
 * Firebase: como base de datos del proyecto
 * React Router: para el enrutado de las paginas a visualizar o componentes
 * SASS: Se hizo uso de sass para iniciar o restaura la base del proyecto y estilizar algunos componentes 
+* Styled Components: se usos para estilizar componentes de Material UI
+* Local Storage: se utilizo para guardar la informacion del carrito y no perderlo al actualizar
 
 ### Instalacion/uso
 Para la instalacion del proyecto es necesario seguir los siguientes pasos.
