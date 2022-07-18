@@ -5,6 +5,7 @@ import {
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList';
 import { database } from '../../firebase';
+import LoaderList from './components/LoaderList';
 
 function ItemListContainer() {
   const [products, setProducts] = useState([]);
@@ -29,7 +30,7 @@ function ItemListContainer() {
     };
   }, [categoryId]);
 
-  if (loading) return <div>Cargando</div>;
+  if (loading) return <LoaderList />;
 
   return (
     <ItemList products={products} />

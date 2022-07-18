@@ -2,9 +2,11 @@ import { Box, Skeleton } from '@mui/material';
 
 function LoaderList() {
   return (
-    <Box sx={{ pt: 0.5 }}>
-      <Skeleton />
-      <Skeleton width="60%" />
+    <Box component="div" className="product-list" m={5}>
+      <Skeleton sx={{ height: '34rem' }} />
+      <Skeleton sx={{ height: '34rem' }} />
+      <Skeleton sx={{ height: '34rem' }} />
+      <Skeleton sx={{ height: '34rem' }} />
     </Box>
   );
 }

@@ -43,9 +43,6 @@ function CheckoutInfo({ finishOrder }) {
           width: '100%', p: { xs: 2, sm: 2 }, m: 0, pl: 0,
         }}
       >
-        {/* <Grid item xs={12} mt={3}>
-          <StepContainer/>
-        </Grid> */}
         <Grid container spacing={3} m={3} sx={{ display: 'flex', flexDirection: 'column', padding: '1rem 2rem' }}>
           <Typography variant="h4">Informacion de cliente</Typography>
           <Box component="form" mb={5} pt={3} sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
