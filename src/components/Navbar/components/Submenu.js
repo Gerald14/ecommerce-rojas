@@ -22,7 +22,10 @@ function Submenu({ anchorEl, hideSubmenu }) {
     const consulta = getDocs(query(categoryCollection, orderBy('name')));
 
     consulta.then((result) => {
-      const categoriesResult = result.docs.map((category) => ({ ...category.data(), id: category.id }));
+      const categoriesResult = result.docs.map((category) => {
+        const categoryObj = { ...category.data(), id: category.id };
+        return categoryObj;
+      });
       setCategories(categoriesResult);
     });
 
